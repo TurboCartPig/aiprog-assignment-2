@@ -3,7 +3,7 @@
 import tensorflow as tf
 import tensorflow_datasets as tfds
 
-images, lables = tfds.load(
+ds = tfds.load(
     "stl10",
     split="train",
     as_supervised=True,
