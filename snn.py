@@ -1,8 +1,8 @@
 """Task 1.1 STL-10 classification using simple neural network"""
 
+import matplotlib.pyplot as plt
 import tensorflow as tf
 import tensorflow_datasets as tfds
-import matplotlib.pyplot as plt
 from tensorflow import keras
 
 # Load the dataset split into training data (images and labels), and testing data.
@@ -36,8 +36,8 @@ model.compile(
 )
 
 # Fit the model to the training data
-model.fit(train, epochs=10)
+model.fit(train, validation_data=test, epochs=10)
 
-# Evaluate the performence of the model, based on loss and accuracy
+# Evaluate the performance of the model, based on loss and accuracy
 test_loss, test_acc = model.evaluate(test, verbose=2)
 print(f"Test loss: {test_loss}, Test accuracy: {test_acc}")
